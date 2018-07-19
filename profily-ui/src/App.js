@@ -1,52 +1,16 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Search from "./components/Search";
 import Classification from "./components/Classification"
 import Transactions from "./components/Transactions"
 
 import testData from "./testData.json"
-
 class App extends Component {
-
-
-  /*
-
-  {
-    "customerId" : 1,
-    "classifications" : [ {
-      "key" : "BIG_SPENDER",
-      "description" : "Big Spender"
-    } ],
-    "dateOfBalance" : "2018-07-19T05:10:43.712+0000",
-    "balance" : 42132,
-    "monthDate" : "2016-06-30T14:00:00.000+0000",
-    "transactionsInMonth" : [ {
-      "date" : "2016-07-02T19:43:51.000+0000",
-      "amountCents" : -982,
-      "description" : "IPSUM ADIPISCING"
-    }, {
-      "date" : "2016-07-03T13:56:56.000+0000",
-      "amountCents" : -515,
-      "description" : "AUGUE"
-    }, {
-      "date" : "2016-07-04T14:46:02.000+0000",
-      "amountCents" : -1857,
-      "description" : "SIT"
-    }, {
-
-  */
-
   constructor(){
     super();
-    this.state = {response : testData};
-    console.log(testData);
+    // this.state = {response: testData};
+    this.state = {response: {}};
   }
-  //
-  // constructor() {
-  //   }
-  //   this.state = {
-  //     projects: []
-  // }
 
   handleSearch(customerId, selectedMonth) {
 
@@ -57,13 +21,6 @@ class App extends Component {
       .then(json => this.setState({response: json}))
       .then(json => console.log(this.state.response))
       .catch(e => console.error(e));
-
-    //
-    //
-    // let prjs = this.state.projects;
-    // prjs.push(project);
-    // this.setState({projects:prjs});
-    // console.log(project);
   }
 
   render() {
