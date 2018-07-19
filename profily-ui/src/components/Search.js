@@ -1,8 +1,6 @@
 import React from 'react';
 
 import {Button, DatePicker, Form, Icon, Input} from 'antd';
-
-
 const FormItem = Form.Item;
 const {MonthPicker} = DatePicker;
 

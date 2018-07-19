@@ -4,9 +4,9 @@ import Search from "./components/Search";
 import Classification from "./components/Classification"
 import Transactions from "./components/Transactions"
 
-import testData from "./testData.json"
+// import testData from "./testData.json"
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
     // this.state = {response: testData};
     this.state = {response: {}};
@@ -17,7 +17,7 @@ class App extends Component {
     let url = `http://localhost:8080/customer/${customerId}?month=${selectedMonth}-01`;
     console.log(url);
     fetch(url)
-      .then(resp=> resp.json())
+      .then(resp => resp.json())
       .then(json => this.setState({response: json}))
       .then(json => console.log(this.state.response))
       .catch(e => console.error(e));

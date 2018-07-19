@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Table, Icon, Divider } from 'antd';
+import { Table} from 'antd';
+import Moment from 'react-moment';
+import 'moment-timezone';
+
 class Transactions extends Component {
 
   render() {
@@ -12,6 +15,7 @@ class Transactions extends Component {
         title: 'Date',
         dataIndex: 'date',
         key: 'date',
+        render: date => <Moment format="YYYY-MM-DD HH:mm:ss">{date}</Moment>,
       },
       {
         title: 'Description',

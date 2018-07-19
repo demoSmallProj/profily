@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Tag} from 'antd';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 class Classification extends Component {
   render() {
@@ -13,8 +15,8 @@ class Classification extends Component {
         <div>
           <strong>Classifications</strong>: {classifications}
         </div>
-        <div><strong>Customer ID:</strong> {this.props.customerId}</div>
-        <div><strong>Request time:</strong> {this.props.dateOfBalance}</div>
+        <div><strong>Customer Id:</strong> {this.props.customerId}</div>
+        <div><strong>Request time:</strong> <Moment format="YYYY-MM-DD HH:mm:ss">{this.props.dateOfBalance}</Moment></div>
         <div><strong>Current Balance:</strong> { this.props.balance ? parseFloat( this.props.balance / 100).toFixed(2) : undefined }</div>
         <br/>
       </div>
