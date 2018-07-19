@@ -31,7 +31,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Transactions.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Transactions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Transactions.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -81,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+            <state relative-caret-position="901">
+              <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -106,8 +106,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this.state</find>
       <find>usern</find>
+      <find>this.state</find>
     </findStrings>
     <replaceStrings>
       <replace>this.state.response</replace>
@@ -255,12 +255,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1532012281507</updated>
-      <workItem from="1532012282664" duration="1902000" />
+      <workItem from="1532012282664" duration="2448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1902000" />
+    <option name="totallyTimeSpent" value="2448000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
@@ -274,9 +274,9 @@
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32943925" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32943925" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Tail" />
       <window_info anchor="right" id="Database" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -319,12 +319,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.test.js">
+    <entry file="file://$USER_HOME$/Dropbox/pract/profily/profily-ui/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -337,10 +335,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Dropbox/pract/profily/profily-ui/src/index.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="799">
+          <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -351,26 +349,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Transactions.js">
+    <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="901">
+          <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Search.js">
+    <entry file="file://$PROJECT_DIR$/src/App.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Transactions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+        <state>
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
