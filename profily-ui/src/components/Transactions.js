@@ -22,6 +22,7 @@ class Transactions extends Component {
         title: 'Amount',
         dataIndex: 'amountCents',
         key: 'amountCents',
+        render: cents => parseFloat( cents / 100).toFixed(2),
       },
     ];
     return (

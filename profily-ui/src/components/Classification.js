@@ -15,7 +15,7 @@ class Classification extends Component {
         </div>
         <div><strong>Customer ID:</strong> {this.props.customerId}</div>
         <div><strong>Request time:</strong> {this.props.dateOfBalance}</div>
-        <div><strong>Current Balance CENTS:</strong> {this.props.balance}</div>
+        <div><strong>Current Balance:</strong> { this.props.balance ? parseFloat( this.props.balance / 100).toFixed(2) : undefined }</div>
         <br/>
       </div>
     );
