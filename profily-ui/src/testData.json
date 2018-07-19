@@ -1,0 +1,107 @@
+{
+  "customerId" : 1,
+  "classifications" : [ {
+  "key" : "BIG_SPENDER",
+  "description" : "Big Spender"
+} ],
+  "dateOfBalance" : "2018-07-19T05:10:43.712+0000",
+  "balance" : 42132,
+  "monthDate" : "2016-06-30T14:00:00.000+0000",
+  "transactionsInMonth" : [ {
+  "date" : "2016-07-02T19:43:51.000+0000",
+  "amountCents" : -982,
+  "description" : "IPSUM ADIPISCING"
+}, {
+  "date" : "2016-07-03T13:56:56.000+0000",
+  "amountCents" : -515,
+  "description" : "AUGUE"
+}, {
+  "date" : "2016-07-04T14:46:02.000+0000",
+  "amountCents" : -1857,
+  "description" : "SIT"
+}, {
+  "date" : "2016-07-08T20:09:34.000+0000",
+  "amountCents" : -596,
+  "description" : "ULLAMCORPER MAGNA TEMPUS"
+}, {
+  "date" : "2016-07-09T14:51:54.000+0000",
+  "amountCents" : -646,
+  "description" : "NEC VEL QUIS"
+}, {
+  "date" : "2016-07-10T19:32:19.000+0000",
+  "amountCents" : -1388,
+  "description" : "ACCUMSAN"
+}, {
+  "date" : "2016-07-10T19:46:15.000+0000",
+  "amountCents" : -736,
+  "description" : "MORBI NON"
+}, {
+  "date" : "2016-07-13T23:41:46.000+0000",
+  "amountCents" : -277,
+  "description" : "IACULIS CURSUS AC"
+}, {
+  "date" : "2016-07-16T23:52:40.000+0000",
+  "amountCents" : -446,
+  "description" : "NISL"
+}, {
+  "date" : "2016-07-18T07:16:16.000+0000",
+  "amountCents" : -1901,
+  "description" : "CURSUS"
+}, {
+  "date" : "2016-07-18T21:21:33.000+0000",
+  "amountCents" : -874,
+  "description" : "SEM QUISQUE BLANDIT FAUCIBUS"
+}, {
+  "date" : "2016-07-19T21:42:26.000+0000",
+  "amountCents" : -589,
+  "description" : "MAURIS"
+}, {
+  "date" : "2016-07-20T01:21:26.000+0000",
+  "amountCents" : -1411,
+  "description" : "NULLA NON BLANDIT LOREM"
+}, {
+  "date" : "2016-07-20T18:41:58.000+0000",
+  "amountCents" : -716,
+  "description" : "AMET NUNC"
+}, {
+  "date" : "2016-07-21T05:55:46.000+0000",
+  "amountCents" : -949,
+  "description" : "NEC"
+}, {
+  "date" : "2016-07-26T12:30:04.000+0000",
+  "amountCents" : -1650,
+  "description" : "MAGNA PULVINAR ULTRICES"
+}, {
+  "date" : "2016-07-27T09:49:21.000+0000",
+  "amountCents" : -1288,
+  "description" : "VITAE ULTRICES SEM ULLAMCORPER"
+}, {
+  "date" : "2016-07-27T16:09:07.000+0000",
+  "amountCents" : -1676,
+  "description" : "MI URNA"
+}, {
+  "date" : "2016-07-27T18:09:02.000+0000",
+  "amountCents" : -948,
+  "description" : "CONGUE FAUCIBUS NUNC MI"
+}, {
+  "date" : "2016-07-28T03:51:39.000+0000",
+  "amountCents" : -990,
+  "description" : "VELIT MAGNA NUNC MASSA"
+}, {
+  "date" : "2016-07-28T18:18:46.000+0000",
+  "amountCents" : -1700,
+  "description" : "CURSUS JUSTO MORBI"
+}, {
+  "date" : "2016-07-28T23:34:45.000+0000",
+  "amountCents" : -1622,
+  "description" : "SIT"
+}, {
+  "date" : "2016-07-30T00:39:08.000+0000",
+  "amountCents" : -1617,
+  "description" : "CURSUS PULVINAR NUNC"
+}, {
+  "date" : "2016-07-31T09:08:19.000+0000",
+  "amountCents" : -1837,
+  "description" : "LACINIA MAGNA ELIT"
+} ]
+}
