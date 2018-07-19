@@ -27,7 +27,7 @@ public class PaymentService {
 
     public Customer getCustomer(long customerId, Date monthDate, Date balanceTimeSpecified) {
         //TODO: fix
-        if(monthDate == null) {
+        if (monthDate == null) {
             logger.error("monthDate cannot be null");
             return null;
             //TODO: throw exception
@@ -43,7 +43,7 @@ public class PaymentService {
 
         List<ClassificationType> classificationTypes = getClassifications(payments);
         List<Classification> classifications = toClassifications(classificationTypes);
-        List<Transaction> transactions = toTransactions(payments) ;
+        List<Transaction> transactions = toTransactions(payments);
 
         Customer customer = new Customer(customerId, classifications, balanceTime, balance, monthDate, transactions);
         return customer;
@@ -54,7 +54,7 @@ public class PaymentService {
     }
 
     private List<Transaction> toTransactions(List<Payment> payments) {
-        if(payments == null) {
+        if (payments == null) {
             return Collections.emptyList();
         }
         return payments.stream().map(Transaction::fromPayment).collect(Collectors.toList());
@@ -62,12 +62,12 @@ public class PaymentService {
 
     private List<ClassificationType> getClassifications(List<Payment> payments) {
         List<ClassificationType> classifications = new ArrayList<>();
-        if(payments == null) {
+        if (payments == null) {
             return Collections.emptyList();
         }
 
         ClassificationType personType = getPersonType(payments);
-        if(personType != null) {
+        if (personType != null) {
             classifications.add(personType);
         }
 
@@ -75,10 +75,10 @@ public class PaymentService {
         boolean fastSpender = isFastSpender(payments);
         classifications.addAll(getBigSpenderFastSpenderPotentialLoan(bigSpender, fastSpender));
 
-        if(isBigTicketSpender(payments)) {
+        if (isBigTicketSpender(payments)) {
             classifications.add(ClassificationType.BIG_TICKET_SPENDER);
         }
-        if(isPotentialSaver(payments)) {
+        if (isPotentialSaver(payments)) {
             classifications.add(ClassificationType.POTENTIAL_SAVER);
         }
         return classifications;
@@ -90,14 +90,14 @@ public class PaymentService {
 
     //Big Spender	Spends over 80% of their deposits every month ($ value of deposits)
     private boolean isBigSpender(List<Payment> payments) {
-        if(payments == null) {
+        if (payments == null) {
             return false;
         }
         long[] spendingsAndDeposits = getSpendingsAndDeposits(payments);
         long spendings = spendingsAndDeposits[0];
         long deposits = spendingsAndDeposits[1];
         boolean result;
-        if(deposits == 0L) {
+        if (deposits == 0L) {
             result = Math.abs(spendings) > 0L;
         } else {
             double ratio = ((double) Math.abs(spendings)) / deposits;
@@ -107,14 +107,14 @@ public class PaymentService {
     }
 
     private boolean isPotentialSaver(List<Payment> payments) {
-        if(payments == null) {
+        if (payments == null) {
             return false;
         }
         long[] spendingsAndDeposits = getSpendingsAndDeposits(payments);
         long spendings = spendingsAndDeposits[0];
         long deposits = spendingsAndDeposits[1];
         boolean result;
-        if(deposits == 0L) {
+        if (deposits == 0L) {
             result = Math.abs(spendings) == 0L;
         } else {
             double ratio = ((double) Math.abs(spendings)) / deposits;
@@ -136,7 +136,7 @@ public class PaymentService {
 
 
     private boolean isBigTicketSpender(List<Payment> payments) {
-        if(payments == null) {
+        if (payments == null) {
             return false;
         }
         long centsIn1000Dollars = 1000 * 100;
@@ -149,28 +149,28 @@ public class PaymentService {
 
     private List<ClassificationType> getBigSpenderFastSpenderPotentialLoan(boolean bigSpender, boolean fastSpender) {
         List<ClassificationType> result = new ArrayList<>();
-        if(bigSpender && fastSpender) {
+        if (bigSpender && fastSpender) {
             result.add(ClassificationType.POTENTIAL_LOAN);
         } else {
-            if(bigSpender) {
+            if (bigSpender) {
                 result.add(ClassificationType.BIG_SPENDER);
             }
-            if(fastSpender) {
+            if (fastSpender) {
                 result.add(ClassificationType.FAST_SPENDER);
             }
         }
         return result;
     }
 
-//        Fast Spender	Spends over 75% of any deposit within 7 days of making it
+    //        Fast Spender	Spends over 75% of any deposit within 7 days of making it
     private boolean isFastSpender(List<Payment> payments) {
         if (payments == null) {
             return false;
         }
-        List<Pair<Long,Long>> depositToClearSpendings = new ArrayList<>();
+        List<Pair<Long, Long>> depositToClearSpendings = new ArrayList<>();
         for (int i = 0; i < payments.size(); i++) {
             Payment payment = payments.get(i);
-            if(payment.getAmountCents() > 0) {
+            if (payment.getAmountCents() > 0) {
                 Date dateTo = plus7Days(payment.getDate());
                 List<Payment> nextPaymentsInRange = new ArrayList<>();
                 for (int j = i + 1; i < payments.size() && payments.get(j).getDate().before(dateTo); i++) {
@@ -181,7 +181,7 @@ public class PaymentService {
             }
         }
 
-        OptionalDouble smallRatio = depositToClearSpendings.stream().mapToDouble(pair -> ((double) pair.getRight()) / pair.getLeft()).filter(ratio -> ratio <= 0.75).findFirst();
+        OptionalDouble smallRatio = depositToClearSpendings.stream().mapToDouble(pair -> pair.getLeft() == 0L ? 1D : ((double) pair.getRight()) / pair.getLeft()).filter(ratio -> ratio <= 0.75).findFirst();
         return smallRatio.isPresent();
     }
 
@@ -208,9 +208,12 @@ public class PaymentService {
         return personType;
     }
 
-    private ClassificationType getClassificationType(int validPaymentsCount, long beforeMiddayCount, long strictlyAfterMiddayCount) {
-        double beforeRatio = beforeMiddayCount / validPaymentsCount;
-        double afterRatio = strictlyAfterMiddayCount / validPaymentsCount;
+    ClassificationType getClassificationType(int validPaymentsCount, long beforeMiddayCount, long strictlyAfterMiddayCount) {
+        if (validPaymentsCount == 0) {
+            return null;
+        }
+        double beforeRatio = (double) beforeMiddayCount / validPaymentsCount;
+        double afterRatio = (double) strictlyAfterMiddayCount / validPaymentsCount;
         return beforeRatio > 0.5 ? ClassificationType.MORNING_PERSON :
                 afterRatio > 0.5 ? ClassificationType.AFTERNOON_PERSON : null;
     }
